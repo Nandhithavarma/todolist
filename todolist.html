@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #input {
+            padding: 10px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #button:hover {
+            background-color: #218838;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .mylist {
+            background-color: #fff;
+            margin: 10px auto;
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mylist button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .mylist button:hover {
+            background-color: #c82333;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>My TODO List</h1>
+    <input type="text" placeholder="Enter input" id="input">
+    <button id="button">Add to List</button>
+    <ul id="list"></ul>
+
+
+    <script>
+        let inputele = document.getElementById("input")
+        let buttonele = document.getElementById("button")
+        let listele = document.getElementById("list")
+        buttonele.addEventListener('click',()=>{
+            if (inputele.value !=""){
+            let liele = document.createElement("li")
+            liele.textContent=input.value
+            listele.appendChild(liele)
+            liele.classList.add("mylist")
+
+            let delbutton = document.createElement("button")
+            delbutton.textContent="delete"
+            liele.appendChild(delbutton)
+            delbutton.addEventListener('click',()=>{
+            liele.remove()
+
+            })
+            inputele.value=""
+            }
+        })
+
+
+    </script>
+
+</body>
+</html>
